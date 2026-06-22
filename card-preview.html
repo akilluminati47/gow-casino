@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GEARS OF WAR | FULL DECK PREVIEW</title>
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<meta name="theme-color" content="#c41200">
+<link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Oswald:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #060a06;
+  --steel: #1a1e20;
+  --steel2: #222830;
+  --steel3: #2a3240;
+  --crimson: #c41200;
+  --gold: #c49a00;
+  --gold2: #ffd000;
+  --text: #ddd8c0;
+  --text-dim: #7a7060;
+  --card-w: 92px;
+  --card-h: 130px;
+  --card-radius: 7px;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html,body{
+  min-height:100vh;
+  background:var(--bg);
+  background-image:
+    radial-gradient(ellipse 80% 50% at 50% 0%, rgba(10,30,10,0.5) 0%, transparent 60%),
+    repeating-linear-gradient(45deg,transparent,transparent 30px,rgba(255,255,255,0.007) 30px,rgba(255,255,255,0.007) 31px);
+  font-family:'Russo One',sans-serif;
+  color:var(--text);
+}
+
+.wrap { max-width:1400px; margin:0 auto; padding:30px 20px 60px; }
+
+h1 {
+  font-size:13px; letter-spacing:8px; color:var(--crimson);
+  font-family:'Oswald',sans-serif; font-weight:300; margin-bottom:4px;
+}
+h2 {
+  font-size:32px; letter-spacing:3px; color:var(--gold2);
+  text-shadow:0 0 20px var(--gold),0 2px 4px #000;
+  margin-bottom:30px; line-height:1;
+}
+
+.suit-section { margin-bottom:40px; }
+.suit-label {
+  display:flex; align-items:center; gap:10px;
+  font-size:11px; letter-spacing:5px; color:var(--text-dim);
+  font-family:'Oswald',sans-serif; font-weight:600;
+  margin-bottom:12px; padding-bottom:8px;
+  border-bottom:1px solid rgba(255,255,255,0.06);
+}
+.suit-label .icon { width:18px; height:18px; flex-shrink:0; }
+
+.card-row {
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+/* ─── CARD ─────────────────────────────────────────────── */
+.card {
+  display:inline-flex; flex-direction:column;
+  width:var(--card-w); height:var(--card-h);
+  border-radius:var(--card-radius);
+  background:#f5f0e8;
+  border:1.5px solid #ccc;
+  box-shadow:2px 3px 8px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.8);
+  position:relative; overflow:hidden; flex-shrink:0;
+  cursor:default; user-select:none;
+}
+
+/* corners */
+.card-corner {
+  position:absolute;
+  display:flex; flex-direction:column; align-items:center;
+  gap:0; line-height:1;
+  z-index:2;
+  background:rgba(245,240,232,0.90);
+  border-radius:3px;
+  padding:2px 3px;
+  backdrop-filter:blur(2px);
+}
+.card-corner.tl { top:4px; left:4px; }
+.card-corner.br { bottom:4px; right:4px; transform:rotate(180deg); }
+.card-value { font-size:13px; font-weight:bold; font-family:'Russo One',sans-serif; line-height:1; }
+.card-suit-sm { width:14px; height:14px; }
+.card-suit-sm svg { width:100%; height:100%; }
+
+/* pip center */
+.card-center { flex:1; display:flex; align-items:center; justify-content:center; padding:4px; }
+.card-center svg { width:100%; height:100%; max-width:54px; max-height:60px; }
+
+/* face portrait */
+.face-portrait-area {
+  position:absolute; inset:0;
+  border-radius:calc(var(--card-radius) - 1px);
+  overflow:hidden;
+  background:#0a0a10;
+  z-index:0;
+}
+.face-portrait-area img {
+  width:100%; height:100%;
+  object-fit:cover;
+  object-position:center 10%;
+  display:block;
+}
+.face-portrait-area.ace-scene img {
+  object-fit:contain;
+  object-position:center center;
+  background:#050510;
+}
+.face-portrait-name {
+  position:absolute;
+  bottom:0; left:0; right:0;
+  background:linear-gradient(transparent, rgba(0,0,0,0.92) 40%);
+  font-size:6px;
+  font-family:'Russo One',sans-serif;
+  text-align:center;
+  padding:14px 3px 3px;
+  letter-spacing:0.4px;
+  text-transform:uppercase;
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+  pointer-events:none;
+}
+
+/* back card */
+.card.face-down { background:none; border-color:#333; }
+.card-back-design {
+  width:100%; height:100%;
+  display:flex; align-items:center; justify-content:center;
+}
+.card-back-design svg { width:90%; height:90%; }
+
+/* value label below each card */
+.card-label {
+  font-size:8px; letter-spacing:2px;
+  font-family:'Oswald',sans-serif; font-weight:400;
+  color:var(--text-dim); text-align:center;
+  margin-top:5px;
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>GEARS OF WAR CASINO</h1>
+  <h2>FULL DECK — 52 CARDS</h2>
+  <div id="deck"></div>
+</div>
+
+<script>
+// ── Suit icons ────────────────────────────────────────────────────────────────
+function cogSVG(sz) {
+  sz = sz || 20;
+  return `<svg width="${sz}" height="${sz}" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <g fill="#7a8faa">
+      <circle cx="12" cy="12" r="8.5"/>
+      <rect x="10.5" y="0.5" width="3" height="5.5" rx="1"/>
+      <rect x="10.5" y="18" width="3" height="5.5" rx="1"/>
+      <rect x="0.5" y="10.5" width="5.5" height="3" rx="1"/>
+      <rect x="18" y="10.5" width="5.5" height="3" rx="1"/>
+      <rect transform="rotate(45 12 12)" x="10.5" y="0.5" width="3" height="5.5" rx="1"/>
+      <rect transform="rotate(45 12 12)" x="10.5" y="18" width="3" height="5.5" rx="1"/>
+      <rect transform="rotate(45 12 12)" x="0.5" y="10.5" width="5.5" height="3" rx="1"/>
+      <rect transform="rotate(45 12 12)" x="18" y="10.5" width="5.5" height="3" rx="1"/>
+    </g>
+    <circle cx="12" cy="12" r="3.8" fill="#0d1820"/>
+    <circle cx="12" cy="12" r="1.8" fill="#5a6a7a"/>
+  </svg>`;
+}
+function imulsionSVG(sz) {
+  sz = sz || 20;
+  return `<svg width="${sz}" height="${sz}" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12,2 C9,6 4,12 4,16 A8,8 0 0 0 20,16 C20,12 15,6 12,2 Z" fill="#1db84a"/>
+    <ellipse cx="9.5" cy="15" rx="2" ry="3.5" fill="#66ff88" opacity="0.55"/>
+    <ellipse cx="9.5" cy="12" rx="1" ry="1.5" fill="#aaffcc" opacity="0.4"/>
+  </svg>`;
+}
+function locustSVG(sz) {
+  sz = sz || 20;
+  return `<svg width="${sz}" height="${sz}" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12,1.5 L20.5,7 L21,15 L17,21 L7,21 L3,15 L3.5,7 Z" fill="#991100"/>
+    <rect x="6.5" y="8.5" width="4.5" height="5.5" rx="1.5" fill="#1a0000"/>
+    <rect x="13" y="8.5" width="4.5" height="5.5" rx="1.5" fill="#1a0000"/>
+    <rect x="8.5" y="17" width="7" height="2" rx="1" fill="#660000"/>
+    <rect x="6.5" y="5" width="11" height="2.5" rx="1" fill="#bb2200"/>
+  </svg>`;
+}
+function swarmSVG(sz) {
+  sz = sz || 20;
+  return `<svg width="${sz}" height="${sz}" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <line x1="5"  y1="2" x2="9"  y2="22" stroke="#8800cc" stroke-width="3.2" stroke-linecap="round"/>
+    <line x1="11" y1="2" x2="15" y2="22" stroke="#8800cc" stroke-width="3.2" stroke-linecap="round"/>
+    <line x1="17" y1="2" x2="21" y2="22" stroke="#8800cc" stroke-width="3.2" stroke-linecap="round"/>
+  </svg>`;
+}
+function suitSVG(suit, sz) {
+  if (suit === 'cog')      return cogSVG(sz);
+  if (suit === 'imulsion') return imulsionSVG(sz);
+  if (suit === 'locust')   return locustSVG(sz);
+  if (suit === 'swarm')    return swarmSVG(sz);
+  return '';
+}
+function suitColor(suit) {
+  if (suit === 'cog')      return '#4a6070';
+  if (suit === 'imulsion') return '#1aaa44';
+  if (suit === 'locust')   return '#bb1500';
+  if (suit === 'swarm')    return '#8800cc';
+  return '#333';
+}
+function suitName(suit) {
+  return { cog:'COG GEAR  ♠', imulsion:'IMULSION  ♥', locust:'LOCUST  ♦', swarm:'SWARM CLAW  ♣' }[suit] || suit;
+}
+
+// ── Face card images ──────────────────────────────────────────────────────────
+const CARD_CHAR_IMGS = {
+  'Marcus':       './images/marcus.png',
+  'Dom':          './images/dom.jpg',
+  'Locust Drone': './images/drone.png',
+  'Swarm Drone':  './images/swarm-drone.png',
+  'Anya':         './images/anya.png',
+  'Kait':         './images/kait.png',
+  'Myrrah':       './images/myrrah.png',
+  'Reyna':        './images/reyna.png',
+  'Hoffman':      './images/hoffman.jpg',
+  'Adam':         './images/adam.jpg',
+  'RAAM':         './images/raam.jpeg',
+  'Warden':       './images/warden.jpg',
+  'OMEN':         './images/omen.png',
+  'SOURCE':       './images/imulsion.jpeg',
+  'E-HOLE':       './images/ehole.jpg',
+  'SWARM':        './images/swarm-emblem.png',
+};
+
+function getCharName(suit, value) {
+  const map = {
+    J: { cog:'Marcus',  imulsion:'Dom',     locust:'Locust Drone', swarm:'Swarm Drone' },
+    Q: { cog:'Anya',    imulsion:'Kait',    locust:'Myrrah',       swarm:'Reyna'       },
+    K: { cog:'Hoffman', imulsion:'Adam',    locust:'RAAM',         swarm:'Warden'      },
+    A: { cog:'OMEN',    imulsion:'SOURCE',  locust:'E-HOLE',       swarm:'SWARM'       },
+  };
+  return (map[value] || {})[suit] || '';
+}
+
+// ── Pip renderer ──────────────────────────────────────────────────────────────
+function renderPips(suit, value) {
+  const n = parseInt(value) || (value === 'A' ? 1 : 0);
+  if (n === 0) return '';
+  const sz = n <= 2 ? 17 : n <= 4 ? 14 : n <= 6 ? 12 : 10;
+  const scale = sz / 24;
+  const layouts = {
+    1:  [[50,50]],
+    2:  [[50,20],[50,80]],
+    3:  [[50,16],[50,50],[50,84]],
+    4:  [[27,20],[73,20],[27,80],[73,80]],
+    5:  [[27,18],[73,18],[50,50],[27,82],[73,82]],
+    6:  [[27,16],[73,16],[27,50],[73,50],[27,84],[73,84]],
+    7:  [[27,14],[73,14],[50,30],[27,48],[73,48],[27,78],[73,78]],
+    8:  [[27,13],[73,13],[50,28],[27,45],[73,45],[50,62],[27,79],[73,79]],
+    9:  [[27,12],[73,12],[27,31],[73,31],[50,50],[27,69],[73,69],[27,88],[73,88]],
+    10: [[27,11],[73,11],[50,26],[27,41],[73,41],[27,59],[73,59],[50,74],[27,89],[73,89]],
+  };
+  const positions = layouts[n] || layouts[4];
+  const inner = suitSVG(suit, 24).replace(/<svg[^>]*>/,'').replace('</svg>','');
+  return `<svg viewBox="0 0 54 60" xmlns="http://www.w3.org/2000/svg">
+    ${positions.map(([px,py]) => {
+      const cx = px/100*54, cy = py/100*60;
+      return `<g transform="translate(${cx},${cy}) scale(${scale}) translate(-12,-12)">${inner}</g>`;
+    }).join('')}
+  </svg>`;
+}
+
+// ── Card renderer ─────────────────────────────────────────────────────────────
+function renderCard(suit, value) {
+  const el = document.createElement('div');
+  el.className = `card suit-${suit}`;
+  const col = suitColor(suit);
+  const isFace = ['J','Q','K','A'].includes(value);
+  const suitSm = `<span class="card-suit-sm">${suitSVG(suit, 14)}</span>`;
+  const corners = `
+    <div class="card-corner tl">
+      <span class="card-value" style="color:${col}">${value}</span>
+      ${suitSm}
+    </div>
+    <div class="card-corner br">
+      <span class="card-value" style="color:${col}">${value}</span>
+      ${suitSm}
+    </div>`;
+
+  if (isFace) {
+    const charName = getCharName(suit, value);
+    const url = CARD_CHAR_IMGS[charName] || '';
+    const isAce = value === 'A';
+    el.innerHTML = `${corners}
+      <div class="face-portrait-area${isAce ? ' ace-scene' : ''}">
+        <img src="${url}" alt="${charName}">
+        <div class="face-portrait-name" style="color:${col}">${charName}</div>
+      </div>`;
+  } else {
+    el.innerHTML = `${corners}
+      <div class="card-center">${renderPips(suit, value)}</div>`;
+  }
+  return el;
+}
+
+// ── Build full deck ───────────────────────────────────────────────────────────
+const SUITS  = ['cog','imulsion','locust','swarm'];
+const VALUES = ['A','2','3','4','5','6','7','8','9','10','J','Q','K'];
+const deck   = document.getElementById('deck');
+
+SUITS.forEach(suit => {
+  const section = document.createElement('div');
+  section.className = 'suit-section';
+  section.innerHTML = `<div class="suit-label"><span class="icon">${suitSVG(suit, 18)}</span>${suitName(suit)}</div>`;
+
+  const row = document.createElement('div');
+  row.className = 'card-row';
+
+  VALUES.forEach(val => {
+    const wrap = document.createElement('div');
+    wrap.style.display = 'flex';
+    wrap.style.flexDirection = 'column';
+    wrap.style.alignItems = 'center';
+    wrap.appendChild(renderCard(suit, val));
+    const label = document.createElement('div');
+    label.className = 'card-label';
+    label.textContent = val;
+    wrap.appendChild(label);
+    row.appendChild(wrap);
+  });
+
+  section.appendChild(row);
+  deck.appendChild(section);
+});
+</script>
+</body>
+</html>

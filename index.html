@@ -10,7 +10,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <link rel="manifest" href="site.webmanifest">
 <meta name="theme-color" content="#c41200">
-<link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Russo+One&family=Oswald:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="./assets/fonts/fonts.css" rel="stylesheet">
 <style>
 :root {
   --bg: #07090b;
@@ -448,11 +448,25 @@ body {
   </section>
 
   <footer class="site-footer">
-    <span>GEARS OF WAR © THE COALITION / MICROSOFT | FAN PROJECT BY <a class="credit-link" href="https://guns.lol/akilluminati47" target="_blank" rel="noopener noreferrer">Δ47</a></span>
+    <span>GEARS OF WAR © THE COALITION / MICROSOFT | FAN PROJECT BY <a class="credit-link" href="https://guns.lol/akilluminati47" target="_blank" rel="noopener noreferrer">Δ47</a> | <a class="credit-link" href="policies.html">POLICIES</a></span>
     <span>FOR ENTERTAINMENT PURPOSES ONLY | NO REAL WAGERING</span>
     <span>18+ PLAY RESPONSIBLY</span>
   </footer>
 </div>
+
+<script type="importmap">
+{ "imports": { "@discord/embedded-app-sdk": "./libs/discord-embedded-app-sdk.mjs" } }
+</script>
+<script type="module">
+// ── Discord Activity handshake (no-op in a normal browser) ──
+if (new URLSearchParams(location.search).has('frame_id')) {
+  try {
+    const { DiscordSDK } = await import('@discord/embedded-app-sdk');
+    const discordSdk = new DiscordSDK('1520106796151214301'); // Emergence Casino
+    await discordSdk.ready();
+  } catch (e) { console.error('[discord] handshake failed', e); }
+}
+</script>
 
 <script>
 // ===== Shared wallet readout =====
